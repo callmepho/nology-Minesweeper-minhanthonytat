@@ -1,9 +1,9 @@
 package Minesweeper;
 
-public class Selected {
+public class Select {
 	 public int x,y;
 
-	    public Selected(int x, int y) {
+	    public Select(int x, int y) {
 	        this.x = x;
 	        this.y = y;
 	    }
