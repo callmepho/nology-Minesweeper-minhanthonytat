@@ -36,12 +36,12 @@ public class Cell {
 	public String toString() {
 		if(isSelected) {
 			if(isMine) {
-				return "*";
+				return Colour.RED + "*" + Colour.RESET;
 			} else {
-				return ""+minesNextTo;
+				return colourNumber(minesNextTo);
 			}
 		} else {
-			return "?";
+			return Colour.WHITE_BOLD + "?" + Colour.RESET;
 		}
 	}
 	
@@ -53,5 +53,22 @@ public class Cell {
 	
 	public void addMinesNextTo() {
 		this.minesNextTo++;
+	}
+	
+	public String colourNumber(int minesNextTo) {
+		switch(minesNextTo) {
+		case 0:
+			return Colour.WHITE + "" + minesNextTo + Colour.RESET;
+		case 1:
+			return Colour.CYAN + "" + minesNextTo + Colour.RESET;
+		case 2:
+			return Colour.GREEN + "" + minesNextTo + Colour.RESET;
+		case 3:
+			return Colour.YELLOW+ "" + minesNextTo + Colour.RESET;
+		case 4:
+			return Colour.PURPLE + "" + minesNextTo + Colour.RESET;
+		default:
+			return "" + minesNextTo;
+		}
 	}
 }
